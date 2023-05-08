@@ -1,0 +1,81 @@
+indexing model_data.csv [================================================================] 803.28MB/s, eta:  0s                                                                                                               
+==================================================================
+     ===== B1 nursing回归分析 =====
+
+Call:
+lm(formula = nursing ~ temperature_out + treat + temperature_out:treat + 
+    1, data = dat_select, na.action = na.fail)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.73796 -0.58755  0.06117  0.61746  2.02218 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)              -0.7960     0.3309  -2.405  0.01756 *  
+temperature_out          -0.8987     0.4313  -2.084  0.03912 *  
+treatPH                   1.9869     0.4482   4.433 1.95e-05 ***
+treatPL                   0.7582     0.4954   1.530  0.12835    
+temperature_out:treatPH   1.8505     0.5608   3.300  0.00125 ** 
+temperature_out:treatPL   1.5439     0.6718   2.298  0.02315 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.8818 on 130 degrees of freedom
+Multiple R-squared:  0.2512,	Adjusted R-squared:  0.2224 
+F-statistic: 8.724 on 5 and 130 DF,  p-value: 3.712e-07
+
+
+==================================================================
+     ===== B2 activity_nest回归分析 =====
+
+Call:
+lm(formula = activity_nest ~ temperature_out + treat + temperature_out:treat + 
+    1, data = dat_select, na.action = na.fail)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.1911 -0.5827 -0.1253  0.5199  2.5631 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)  
+(Intercept)               0.5870     0.3421   1.716   0.0889 .
+temperature_out           0.8903     0.4458   1.997   0.0483 *
+treatPH                  -0.5946     0.4723  -1.259   0.2107  
+treatPL                   1.2126     0.5147   2.356   0.0202 *
+temperature_out:treatPH  -0.6526     0.5828  -1.120   0.2652  
+temperature_out:treatPL   1.4562     0.7054   2.064   0.0413 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9116 on 112 degrees of freedom
+Multiple R-squared:  0.2045,	Adjusted R-squared:  0.169 
+F-statistic: 5.758 on 5 and 112 DF,  p-value: 9.1e-05
+
+
+==================================================================
+     ===== temperature_in回归分析 =====
+
+Call:
+lm(formula = temperature_in - temperature_out ~ temperature_out + 
+    treat + temperature_out:treat + 1, data = dat_select, na.action = na.fail)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.50789 -0.07546  0.00302  0.08893  0.36176 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             -0.068480   0.011626  -5.891 7.40e-09 ***
+temperature_out          0.001269   0.011381   0.112   0.9112    
+treatPH                  0.198859   0.015374  12.935  < 2e-16 ***
+treatPL                 -0.041545   0.016444  -2.526   0.0119 *  
+temperature_out:treatPH -0.062869   0.014961  -4.202 3.17e-05 ***
+temperature_out:treatPL  0.050866   0.016926   3.005   0.0028 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1379 on 464 degrees of freedom
+Multiple R-squared:  0.4302,	Adjusted R-squared:  0.4241 
+F-statistic: 70.07 on 5 and 464 DF,  p-value: < 2.2e-16
+
