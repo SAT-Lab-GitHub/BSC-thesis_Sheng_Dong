@@ -37,7 +37,7 @@ Supporting data and scripts for Sheng Dong's BSC thesis.
 
 注：在对视频文件进行目标检测之前，脚本会先对`./bumblebee-detection/output_data/`和`./bumblebee-detection/inout_video`两个路径下的文件进行比对。若`./bumblebee-detection/output_data`路径下 已经存在和输入视频同名的CSV文件，则该视频文件不会得到检测。因此，需要再次对某一视频进行检测时，应先移除数据输出路径下的CSV文件。
 
-## 视频案例：`video_samples`
+## 视频案例：`video_examples`
 
 包含了`detect_foraging_room.mp4`和`detect_nesting_room.mp4`两段带有矩形目标标记的视频样例，其原始输入视频和目标检测信息分别见`./bumblebee-detection/video_input/`和`./bumblebee-detection/data_output/`。
 
